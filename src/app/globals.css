@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  /* 군고구마 감성의 따뜻한 팔레트 */
+  --background: #fff8f0;
+  --foreground: #3a281f;
+
+  --color-goguma-50: #fff4ea;
+  --color-goguma-100: #ffe4cc;
+  --color-goguma-200: #ffc99a;
+  --color-goguma-300: #ffa763;
+  --color-goguma-400: #fa8b45;
+  --color-goguma-500: #ee7b3d;
+  --color-goguma-600: #d9632a;
+  --color-goguma-700: #b44d22;
+  --color-goguma-800: #8f3d1f;
+  --color-goguma-900: #73331d;
+
+  --color-roast-50: #f7efe9;
+  --color-roast-100: #ecd9cd;
+  --color-roast-200: #d3b39d;
+  --color-roast-300: #ab7f66;
+  --color-roast-400: #7d5a45;
+  --color-roast-500: #5b3f30;
+  --color-roast-600: #4a3226;
+  --color-roast-700: #3a281f;
+  --color-roast-800: #2a1c16;
+  --color-roast-900: #1c130f;
+
+  --color-cream-50: #fffdfb;
+  --color-cream-100: #fff8f0;
+  --color-cream-200: #fdf0e0;
+  --color-cream-300: #f9e4cc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-goguma-50: var(--color-goguma-50);
+  --color-goguma-100: var(--color-goguma-100);
+  --color-goguma-200: var(--color-goguma-200);
+  --color-goguma-300: var(--color-goguma-300);
+  --color-goguma-400: var(--color-goguma-400);
+  --color-goguma-500: var(--color-goguma-500);
+  --color-goguma-600: var(--color-goguma-600);
+  --color-goguma-700: var(--color-goguma-700);
+  --color-goguma-800: var(--color-goguma-800);
+  --color-goguma-900: var(--color-goguma-900);
+
+  --color-roast-50: var(--color-roast-50);
+  --color-roast-100: var(--color-roast-100);
+  --color-roast-200: var(--color-roast-200);
+  --color-roast-300: var(--color-roast-300);
+  --color-roast-400: var(--color-roast-400);
+  --color-roast-500: var(--color-roast-500);
+  --color-roast-600: var(--color-roast-600);
+  --color-roast-700: var(--color-roast-700);
+  --color-roast-800: var(--color-roast-800);
+  --color-roast-900: var(--color-roast-900);
+
+  --color-cream-50: var(--color-cream-50);
+  --color-cream-100: var(--color-cream-100);
+  --color-cream-200: var(--color-cream-200);
+  --color-cream-300: var(--color-cream-300);
+
+  --font-sans: "Pretendard", "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

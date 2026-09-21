@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "goguma-dev",
+      "runtimeExecutable": "C:\\Users\\student\\Desktop\\Goguma\\.claude\\dev.cmd",
+      "runtimeArgs": [],
+      "port": 3000
+    }
+  ]
+}

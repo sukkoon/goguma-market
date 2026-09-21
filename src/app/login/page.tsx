@@ -3,9 +3,9 @@ import LoginForm from "@/components/login-form";
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ error?: string; next?: string }>;
 }) {
-  const { error } = await searchParams;
+  const { error, next } = await searchParams;
 
   return (
     <div className="flex flex-1 items-center justify-center px-4 py-12">
@@ -21,7 +21,7 @@ export default async function LoginPage({
             로그인하고 동네 거래를 이어가요
           </p>
         </div>
-        <LoginForm initialError={error} />
+        <LoginForm initialError={error} next={next} />
       </div>
     </div>
   );

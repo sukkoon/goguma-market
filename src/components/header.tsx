@@ -24,9 +24,12 @@ export default async function Header() {
 
         {user ? (
           <div className="flex items-center gap-3">
-            <span className="hidden text-sm text-roast-500 sm:inline">
-              {nickname}님, 안녕하세요
-            </span>
+            <Link
+              href="/mypage"
+              className="text-sm font-medium text-roast-600 hover:text-goguma-600"
+            >
+              {nickname}님
+            </Link>
             <LogoutButton />
           </div>
         ) : (

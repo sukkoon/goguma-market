@@ -8,14 +8,17 @@ const initialState: AuthState = { error: null };
 
 export default function LoginForm({
   initialError,
+  next,
 }: {
   initialError?: string;
+  next?: string;
 }) {
   const [state, formAction, isPending] = useActionState(login, initialState);
   const error = state.error ?? initialError;
 
   return (
     <form action={formAction} className="flex flex-col gap-4">
+      {next && <input type="hidden" name="next" value={next} />}
       <div className="flex flex-col gap-1.5">
         <label htmlFor="email" className="text-sm font-medium text-roast-600">
           이메일

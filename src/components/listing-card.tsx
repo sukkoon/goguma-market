@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { formatPrice, formatRelativeTime } from "@/lib/format";
-import { LISTING_STATUS, type ListingStatus } from "@/lib/constants";
+import { CATEGORY_ICONS, LISTING_STATUS, type Category, type ListingStatus } from "@/lib/constants";
 import type { Tables } from "@/lib/supabase/types";
 
 type Listing = Tables<"listings">;
@@ -9,6 +9,7 @@ type Listing = Tables<"listings">;
 export default function ListingCard({ listing }: { listing: Listing }) {
   const thumbnail = listing.images[0];
   const isSold = listing.status !== "selling";
+  const fallbackIcon = CATEGORY_ICONS[listing.category as Category] ?? "🍠";
 
   return (
     <Link
@@ -26,7 +27,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-3xl">
-            🍠
+            {fallbackIcon}
           </div>
         )}
         {isSold && (

@@ -14,6 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
+      listing_comments: {
+        Row: {
+          content: string
+          created_at: string
+          id: number
+          listing_id: number
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: never
+          listing_id: number
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: never
+          listing_id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "listing_comments_listing_id_fkey"
+            columns: ["listing_id"]
+            isOneToOne: false
+            referencedRelation: "listings"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "listing_comments_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      listing_likes: {
+        Row: {
+          created_at: string
+          listing_id: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          listing_id: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          listing_id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "listing_likes_listing_id_fkey"
+            columns: ["listing_id"]
+            isOneToOne: false
+            referencedRelation: "listings"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "listing_likes_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       listings: {
         Row: {
           category: string

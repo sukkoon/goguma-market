@@ -2,20 +2,23 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { CATEGORY_ICONS, type Category } from "@/lib/constants";
 
 export default function ListingGallery({
   images,
   title,
+  category,
 }: {
   images: string[];
   title: string;
+  category: string;
 }) {
   const [active, setActive] = useState(0);
 
   if (images.length === 0) {
     return (
       <div className="flex aspect-square w-full items-center justify-center rounded-2xl bg-goguma-100 text-6xl">
-        🍠
+        {CATEGORY_ICONS[category as Category] ?? "🍠"}
       </div>
     );
   }

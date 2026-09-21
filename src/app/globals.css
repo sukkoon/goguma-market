@@ -64,7 +64,7 @@
   --color-cream-200: var(--color-cream-200);
   --color-cream-300: var(--color-cream-300);
 
-  --font-sans: "Pretendard", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "NanumSquare", ui-sans-serif, system-ui, sans-serif;
 }
 
 body {

@@ -48,6 +48,25 @@ export const ALL_CATEGORY = {
   description: "동네 이웃들이 올린 모든 물건을 만나보세요.",
 } as const;
 
+export const CATEGORY_SLUGS: Record<Category, string> = {
+  디지털기기: "digital",
+  "가구/인테리어": "furniture",
+  "생활/가공식품": "grocery",
+  의류: "clothing",
+  "뷰티/미용": "beauty",
+  "스포츠/레저": "sports",
+  "취미/게임/음반": "hobby",
+  도서: "books",
+  반려동물용품: "pet",
+  유아동: "kids",
+  기타: "etc",
+};
+
+export function categoryFromSlug(slug: string): Category | null {
+  const found = CATEGORIES.find((c) => CATEGORY_SLUGS[c] === slug);
+  return found ?? null;
+}
+
 export const LISTING_STATUS = {
   selling: "판매중",
   reserved: "예약중",
